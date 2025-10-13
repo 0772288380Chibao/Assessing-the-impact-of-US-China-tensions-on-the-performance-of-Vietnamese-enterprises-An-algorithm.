@@ -1,13 +1,13 @@
 # Assessing-the-impact-of-US-China-tensions-on-the-performance-of-Vietnamese-enterprises-An-algorithm.
-Tổng quan dự án
+**Tổng quan dự án**
 
-Dự án này là một chương trình Python được thiết kế để tự động thu thập, lọc và phân tích dữ liệu bài báo từ trang web, với mục tiêu nghiên cứu các bài viết liên quan đến căng thẳng thương mại giữa Hoa Kỳ và Trung Quốc từ năm 2014 trở đi. Chương trình sử dụng các kỹ thuật web scraping, xử lý ngôn ngữ tự nhiên (NLP), và phân tích dữ liệu để trích xuất thông tin, kiểm tra từ khóa, và tạo báo cáo thống kê theo tháng. Kết quả được lưu dưới dạng file JSON, Excel, và tích hợp với Google Drive để đảm bảo khả năng lưu trữ và tái sử dụng.
+Dự án này là một chương trình Python được thiết kế để tự động thu thập, lọc và phân tích dữ liệu bài báo từ trang web, với mục tiêu nghiên cứu các bài viết liên quan đến căng thẳng thương mại giữa Hoa Kỳ và Trung Quốc từ năm 2014 trở đi. Chương trình sử dụng các kỹ thuật web scraping, và phân tích dữ liệu để trích xuất thông tin, kiểm tra từ khóa, và tạo báo cáo thống kê theo tháng. Kết quả được lưu dưới dạng file JSON, Excel, và tích hợp với Google Drive để đảm bảo khả năng lưu trữ và tái sử dụng.
 
-LƯU Ý
+**LƯU Ý**
 
 Do code lấy dữ liệu tin tức qua sitemap, để lấy được tin tức thì trang web cần phải lưu sitemap những bài báo lại, nếu sitemap không được cung cấp hoặc bị xóa thì cách khai thác dữ liệu này sẽ không thể thực hiện
 
-Mục tiêu chính của dự án:
+**Mục tiêu chính của dự án**:
 
 Thu thập dữ liệu:Lấy danh sách bài báo từ sitemap của báo.
 
@@ -19,7 +19,7 @@ Lưu trữ và xuất dữ liệu: Lưu dữ liệu thô và kết quả phân t
 
 Cấu trúc và chức năng của chương trình
 
-1. Khởi tạo và nhập thư viện
+**1. Khởi tạo và nhập thư viện**
 
 Chương trình sử dụng một bộ thư viện Python để thực hiện các tác vụ từ scraping đến phân tích dữ liệu:
 
@@ -35,7 +35,7 @@ Tối ưu hóa hiệu suất: concurrent.futures để xử lý song song, tăng
 
 Tích hợp Google Drive: google.colab để lưu kết quả lên đám mây.
 
-2. Thu thập bài báo từ sitemap
+**2. Thu thập bài báo từ sitemap**
 
 Chương trình bắt đầu bằng việc truy cập sitemap của Báo Đầu Tư để lấy danh sách URL bài báo:
 
@@ -45,7 +45,7 @@ Hàm get_article_urls_from_sitemap: Phân tích file sitemap XML để trích xu
 
 Hàm crawl_articles_from_sitemaps: Tổng hợp danh sách bài báo, lọc chỉ giữ lại các bài từ 01/01/2014 trở đi để phù hợp với phạm vi nghiên cứu.
 
-3. Xử lý và lọc bài báo
+**3. Xử lý và lọc bài báo**
 
 Sau khi có danh sách bài báo, chương trình thực hiện các bước xử lý chi tiết:
 
@@ -79,7 +79,7 @@ Theo dõi các URL đã xử lý để tránh trùng lặp.
 
 Tổng hợp danh sách bài báo đáp ứng tiêu chí (approved_articles) và danh sách tất cả bài báo từ sitemap (all_article_infos).
 
-4. Phân tích và tạo báo cáo
+**4. Phân tích và tạo báo cáo**
 
 Chương trình tạo hai loại báo cáo thống kê để hỗ trợ phân tích xu hướng:
 
@@ -103,7 +103,7 @@ Tính tỷ lệ xuất hiện của mỗi từ khóa (số lần xuất hiện c
 
 Bảng này hỗ trợ phân tích mức độ quan tâm đến các chủ đề cụ thể, như "thuế quan" hay "chiến tranh thương mại".
 
-5. Lưu trữ và xuất kết quả
+**5. Lưu trữ và xuất kết quả**
 
 Lưu dữ liệu thô: Danh sách bài báo được duyệt được lưu vào file JSON (approved_articles_baodautu.json) để hỗ trợ tái sử dụng và kiểm tra.
 
